@@ -26,6 +26,7 @@ Answer: The cart.php page lets users view, update, or remove items from their ca
 _ _ _ 
 
 3. Database Section
+   
 This section explains how the database is structured.
 
 3.1. What does the users table do?
@@ -44,6 +45,7 @@ Links users to products and stores the quantity of each item.
 _ _ _ 
 
 4. Flow of the Website
+   
 This section explains the flow of user actions.
 
 4.1. What happens when a user registers?
@@ -53,11 +55,36 @@ Answer: The system validates the input, hashes the password, and saves the user 
 Answer: The system verifies the email and password, then starts a session to allow personalized access.
 
 4.3. What happens when a product is added to the cart?
-
 Answer: The system saves the product details in the cart table, linked to the logged-in user's ID.
 
 4.4. What happens when an admin adds a product?
 Answer: The system uploads the product image, saves the product details in the products table, and displays it on the homepage.
+
+_ _ _
+
+5. Security Measures
+   
+This section explains how the website ensures security.
+
+5.1. How are passwords secured?
+Answer: Passwords are hashed using password_hash() before being stored in the database.
+
+5.2. How is session management handled?
+Answer: Sessions track logged-in users ($_SESSION['user_id'] for customers, $_SESSION['admin_id'] for admins) to restrict access to sensitive pages.
+
+5.3. How is admin access secured?
+Answer: Admin login checks the role field in the users table to ensure only admins can access the control panel.
+
+_ _ _ 
+
+How to Use This Guide
+
+Follow the sections to understand:
+
+How users and admins interact with the platform.
+How the database stores and retrieves data.
+The flow of actions across the website.
+For detailed implementation, refer to the individual PHP files for each feature. Let me know if this structure works for you!
 
 4.5. What happens when an admin deletes a product?
 Answer: The system removes the product entry from the products table, making it unavailable on the website.
