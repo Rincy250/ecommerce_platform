@@ -22,3 +22,42 @@ Answer: On the index.php page, users click "Add to Cart" to save items. The syst
 
 1.5. How can users manage their cart?
 Answer: The cart.php page lets users view, update, or remove items from their cart. It also shows the total cost of selected products.
+
+_ _ _ 
+
+3. Database Section
+This section explains how the database is structured.
+
+3.1. What does the users table do?
+Answer: The users table stores information about all users (customers and admins):
+Usernames, emails, hashed passwords.
+A role field to differentiate between customers (user) and admins (admin).
+
+3.2. What does the products table do?
+Answer: The products table contains product details:
+Names, prices, descriptions, and image filenames.
+
+3.3. What does the cart table do?
+Answer: The cart table keeps track of items added to users' carts:
+Links users to products and stores the quantity of each item.
+
+_ _ _ 
+
+4. Flow of the Website
+This section explains the flow of user actions.
+
+4.1. What happens when a user registers?
+Answer: The system validates the input, hashes the password, and saves the user data in the users table.
+
+4.2. What happens when a user logs in?
+Answer: The system verifies the email and password, then starts a session to allow personalized access.
+
+4.3. What happens when a product is added to the cart?
+
+Answer: The system saves the product details in the cart table, linked to the logged-in user's ID.
+
+4.4. What happens when an admin adds a product?
+Answer: The system uploads the product image, saves the product details in the products table, and displays it on the homepage.
+
+4.5. What happens when an admin deletes a product?
+Answer: The system removes the product entry from the products table, making it unavailable on the website.
